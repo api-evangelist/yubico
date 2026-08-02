@@ -1,0 +1,20 @@
+generated: '2026-07-21'
+method: searched
+source: >-
+  https://developers.yubico.com/Software_Projects/YubiCloud_REST_API.html +
+  https://status.yubico.com/
+versioning:
+  scheme: uri-path
+  current: "2.0"
+  docs: https://developers.yubico.com/Software_Projects/YubiCloud_REST_API.html
+  notes: >-
+    Validation service consolidated behind api.yubico.com in 2020; the
+    wsapi/2.0/verify contract is stable and long-lived.
+deprecation:
+  policy_url: https://support.yubico.com/hc/en-us/articles/360016614820
+  sunset_header: false
+  notes: >-
+    Legacy per-server validation endpoints (api2..api5.yubico.com) were retired
+    in favor of the single api.yubico.com endpoint.
+status_page: https://status.yubico.com/
+deprecated_operations: []

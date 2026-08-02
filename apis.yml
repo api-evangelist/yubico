@@ -1,8 +1,15 @@
 aid: yubico
 name: Yubico
-description: 'Yubico is a company surfaced as a portfolio company of a16z and added to the API Evangelist
-  network as a stub for enrichment. Sector: enterprise. This profile is a lead awaiting the enrichment
-  pipeline.'
+description: >-
+  Yubico is the security company behind the YubiKey hardware authentication
+  device and the inventor of the Yubico One-Time Password (OTP). Its public
+  developer surface centers on YubiCloud, a hosted REST service that verifies
+  Yubico OTPs via a signed HTTPS request to api.yubico.com, alongside a broad
+  set of first-party SDKs and libraries for WebAuthn/FIDO2, PIV smart cards,
+  OATH, OTP, and the YubiHSM 2 across Python, .NET, Java, Android, iOS, and C,
+  plus the ykman command-line tool. Yubico co-authored the FIDO U2F standard,
+  ships FIPS 140-3 validated keys, and holds a SOC 2 Type 2 attestation for its
+  enterprise services.
 url: https://raw.githubusercontent.com/api-evangelist/yubico/refs/heads/main/apis.yml
 x-type: company
 x-source: vc-portfolio
@@ -10,13 +17,47 @@ x-backed-by:
 - a16z
 x-tier: stub
 x-tier-reason: portfolio-lead
+accessModel:
+  pricing: unknown
+  onboarding: self-serve
+  trial: false
+  try_now: false
+  public: false
+  label: Self-serve signup
+  confidence: medium
+  source:
+  - authentication
+  generated: '2026-07-22'
+  method: derived
 specificationVersion: '0.20'
 created: '2026-07-17'
-modified: '2026-07-17'
+modified: '2026-07-21'
+image: https://www.yubico.com/wp-content/uploads/2021/02/Yubico-Logo.png
 tags:
 - Company
 - Enterprise
-apis: []
+- Authentication
+- Security
+- Identity
+- Hardware Security
+- FIDO2
+- WebAuthn
+- One-Time Password
+apis:
+- aid: yubico:yubico-validation-api
+  name: Yubico Validation API
+  description: Yubico OTP validation operations.
+  humanURL: https://developers.yubico.com/Software_Projects/YubiCloud_REST_API.html
+  baseURL: https://api.yubico.com/wsapi/2.0
+  tags:
+  - Validation
+  properties:
+  - type: OpenAPI
+    url: openapi/yubico-validation-api-openapi.yml
+  - type: Documentation
+    url: https://developers.yubico.com/OTP/
+  - type: APIReference
+    url: https://developers.yubico.com/Software_Projects/YubiCloud_REST_API.html
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
@@ -25,3 +66,70 @@ maintainers:
 common:
 - type: Website
   url: https://yubico.com
+- type: DeveloperPortal
+  url: https://developers.yubico.com/
+- type: Documentation
+  url: https://developers.yubico.com/OTP/
+- type: APIReference
+  url: https://developers.yubico.com/Software_Projects/YubiCloud_REST_API.html
+- type: GettingStarted
+  url: https://developers.yubico.com/OTP/OTP_Walk-Through.html
+- type: GitHubOrganization
+  url: https://github.com/Yubico
+- type: Support
+  url: https://support.yubico.com/
+- type: Blog
+  url: https://www.yubico.com/blog/
+- type: SignUp
+  url: https://upgrade.yubico.com/getapikey/
+- type: Pricing
+  url: https://www.yubico.com/store/
+- type: TermsOfService
+  url: https://www.yubico.com/support/terms-conditions/
+- type: PrivacyPolicy
+  url: https://www.yubico.com/support/terms-conditions/privacy-notice/
+- type: StatusPage
+  url: https://status.yubico.com/
+- type: Deprecation
+  url: https://support.yubico.com/hc/en-us/articles/360016614820
+- type: Packages
+  url: packages/yubico-packages.yml
+- type: SDKs
+  url: packages/yubico-packages.yml
+- type: CLI
+  url: cli/yubico-cli.yml
+- type: MCPServer
+  url: mcp/yubico-mcp.yml
+- type: AgentSkill
+  url: skills/_index.yml
+- type: LLMsTxt
+  url: llms/yubico-llms.txt
+- type: WellKnown
+  url: well-known/yubico-well-known.yml
+- type: SecurityTxt
+  url: well-known/yubico-security.txt
+- type: Authentication
+  url: authentication/yubico-authentication.yml
+- type: Conventions
+  url: conventions/yubico-conventions.yml
+- type: ErrorCatalog
+  url: errors/yubico-error-codes.yml
+- type: Lifecycle
+  url: lifecycle/yubico-lifecycle.yml
+- type: Conformance
+  url: conformance/yubico-conformance.yml
+- type: Compliance
+  url: https://www.yubico.com/solutions/cybersecurity-compliance/
+- type: DomainSecurity
+  url: security/yubico-domain-security.yml
+- type: VulnerabilityDisclosure
+  url: security/yubico-vulnerability-disclosure.yml
+- type: Security
+  url: https://www.yubico.com/support/issue-rating-system/
+- type: TrustCenter
+  url: security/yubico-trust-center.yml
+x-enrichment:
+  date: '2026-07-21'
+  status: enriched
+  artifacts_added: 18
+  pass: local-v1

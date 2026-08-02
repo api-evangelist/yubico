@@ -1,0 +1,18 @@
+generated: '2026-07-21'
+method: searched
+probe: false
+source: >-
+  https://www.yubico.com/blog/yubienterprise-services-reaches-a-new-milestone-with-soc-2-type-2-attestation-report/ +
+  https://www.yubico.com/solutions/cybersecurity-compliance/
+url: https://www.yubico.com/solutions/cybersecurity-compliance/
+certifications:
+  - SOC 2 Type 2
+  - FIPS 140-3
+  - FIDO2
+  - FIDO U2F
+  - NIST SP 800-63-3 AAL3
+evidence:
+  - source: https://www.yubico.com/blog/yubienterprise-services-reaches-a-new-milestone-with-soc-2-type-2-attestation-report/
+    keywords: [soc 2 type 2, schellman, trust services criteria]
+  - source: https://www.yubico.com/authentication-standards/fido2/
+    keywords: [fido2, fido u2f, fips 140-3, aal3]

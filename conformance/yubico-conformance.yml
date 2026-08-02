@@ -1,0 +1,27 @@
+generated: '2026-07-21'
+method: searched
+source: >-
+  https://developers.yubico.com/Software_Projects/YubiCloud_REST_API.html +
+  https://www.yubico.com/blog/yubienterprise-services-reaches-a-new-milestone-with-soc-2-type-2-attestation-report/
+standards:
+  - id: yubico-otp
+    conforms: true
+    evidence: Implements the Yubico OTP validation protocol (wsapi/2.0/verify).
+  - id: hmac-sha1-request-signing
+    conforms: true
+    evidence: Requests/responses signed with HMAC-SHA1 over shared secret (h parameter).
+  - id: fido2-webauthn
+    conforms: true
+    evidence: Yubico co-authored FIDO U2F and ships FIDO2/WebAuthn server + client libraries.
+  - id: fips-140-3
+    conforms: true
+    evidence: YubiKey 5 FIPS Series validated FIPS 140-3 Overall Level 2 (Physical Level 3), NIST SP 800-63-3 AAL3.
+  - id: soc2-type2
+    conforms: true
+    evidence: YubiEnterprise Services holds a SOC 2 Type 2 attestation (Schellman & Company).
+  - id: rfc9457-problem-details
+    conforms: false
+    evidence: Errors returned as plain-text status field, not application/problem+json.
+  - id: oauth2
+    conforms: false
+    evidence: Uses Client ID + HMAC signature, not OAuth 2.0.

@@ -1,0 +1,22 @@
+generated: '2026-07-21'
+method: probed
+source: live DNS/TLS/HTTP probes of apis.yml + OpenAPI hosts
+hosts:
+- host: yubico.com
+  https: true
+  tls_version: TLSv1.3
+  cert_expires: Jan  8 18:52:06 2027 GMT
+  hsts: true
+  hsts_max_age: 31536000
+domains:
+- domain: yubico.com
+  dnssec: true
+  caa:
+  - 0 issue "amazon.com"
+  - 0 iodef "mailto:tlsadmin@yubico.com"
+  - 0 issue "digicert.com"
+  - 0 issue "globalsign.com"
+  - 0 issue "letsencrypt.org"
+  spf: true
+  dmarc: true
+  dmarc_policy: reject

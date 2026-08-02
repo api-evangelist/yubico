@@ -1,0 +1,18 @@
+overlay: 1.0.0
+info:
+  title: API Evangelist enhancements for Yubico YubiCloud
+  version: 1.0.0
+extends: openapi/yubico-yubicloud-openapi.yml
+actions:
+  - target: $.info
+    update:
+      x-apievangelist-rating: 4
+      x-apievangelist-notes: >-
+        Single-operation signed validation API. Response is plain-text
+        key=value, not JSON; agents must parse and verify the HMAC signature.
+  - target: $.paths['/verify'].get
+    update:
+      x-agentic-access:
+        action-class: connected
+        consequence: read
+        audience: null

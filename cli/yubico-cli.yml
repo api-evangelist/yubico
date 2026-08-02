@@ -1,0 +1,36 @@
+generated: '2026-07-21'
+method: searched
+source: https://developers.yubico.com/yubikey-manager/
+cli:
+  name: ykman
+  full_name: YubiKey Manager CLI
+  official: true
+  current_version: "5.9.0"
+  docs: https://docs.yubico.com/software/yubikey/tools/ykman/
+  package: packages/yubico-packages.yml#yubikey-manager
+  install:
+    - method: pip
+      command: pip install yubikey-manager
+    - method: pipx
+      command: pipx install yubikey-manager
+    - method: download
+      url: https://www.yubico.com/support/download/yubikey-manager/
+  command_groups:
+    - name: info
+      description: Show general information about the connected YubiKey.
+    - name: list
+      description: List connected YubiKeys.
+    - name: config
+      description: Enable/disable applications and interfaces on the YubiKey.
+    - name: fido
+      description: Manage FIDO2/U2F applications, credentials, and PIN.
+    - name: oath
+      description: Manage OATH TOTP/HOTP accounts.
+    - name: otp
+      description: Manage the OTP application (Yubico OTP, challenge-response, static password).
+    - name: piv
+      description: Manage the PIV smart-card application, keys, and certificates.
+    - name: openpgp
+      description: Manage the OpenPGP application.
+    - name: hsmauth
+      description: Manage the YubiHSM Auth application.

@@ -1,0 +1,31 @@
+generated: '2026-07-21'
+method: searched
+source: https://developers.yubico.com/OTP/Specifications/OTP_validation_protocol.html
+authentication:
+  style: Client ID (id) + HMAC-SHA1 request signature (h)
+  ref: authentication/yubico-authentication.yml
+idempotency:
+  supported: false
+  note: >-
+    No idempotency-key contract. A per-request random `nonce` (16-40 chars) is
+    required and is used for replay protection, not safe retry — the same
+    OTP+nonce returns REPLAYED_REQUEST.
+replay_protection:
+  mechanism: nonce
+  param: nonce
+  constraints: 16-40 alphanumeric characters, unique per request
+pagination:
+  supported: false
+transport:
+  request: HTTPS GET with query parameters
+  response_media_type: text/plain
+  response_shape: newline-delimited key=value pairs (h, t, otp, nonce, status)
+signature_verification:
+  required_in_production: true
+  response_field: h
+  algorithm: HMAC-SHA1 (Base64)
+error_handling:
+  envelope: status field in plain-text response
+  ref: errors/yubico-error-codes.yml
+versioning:
+  ref: lifecycle/yubico-lifecycle.yml

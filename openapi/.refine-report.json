@@ -1,0 +1,14 @@
+{
+  "provider": "yubico",
+  "sources": [
+    "yubico-validation-api-openapi.yml"
+  ],
+  "outputs": [
+    "yubico-validation-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}

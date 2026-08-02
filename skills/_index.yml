@@ -1,0 +1,7 @@
+generated: '2026-07-21'
+method: generated
+skills:
+  - file: yubico-verify-otp.md
+    name: Verify a Yubico OTP with YubiCloud
+    api: openapi/yubico-yubicloud-openapi.yml
+    operations: [verifyOtp]

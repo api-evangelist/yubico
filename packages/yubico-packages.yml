@@ -1,0 +1,60 @@
+generated: '2026-07-21'
+method: searched
+source: https://developers.yubico.com/Software_Projects/ and public registries
+packages:
+  - language: python
+    registry: pypi
+    name: yubikey-manager
+    url: https://pypi.org/project/yubikey-manager/
+    install: pip install yubikey-manager
+    official: true
+    description: Official Python library and ykman CLI for configuring any YubiKey over all USB interfaces.
+  - language: python
+    registry: pypi
+    name: fido2
+    url: https://pypi.org/project/fido2/
+    install: pip install fido2
+    official: true
+    description: Official Yubico python-fido2 library implementing WebAuthn/CTAP2 client and server.
+  - language: python
+    registry: pypi
+    name: yubihsm
+    url: https://pypi.org/project/yubihsm/
+    install: pip install yubihsm
+    official: true
+    description: Official Python library for the YubiHSM 2.
+  - language: dotnet
+    registry: nuget
+    name: Yubico.YubiKey
+    url: https://www.nuget.org/packages/Yubico.YubiKey
+    install: dotnet add package Yubico.YubiKey
+    official: true
+    description: Official YubiKey .NET SDK for desktop applications.
+  - language: java
+    registry: maven
+    name: com.yubico:webauthn-server-core
+    url: https://central.sonatype.com/artifact/com.yubico/webauthn-server-core
+    install: 'implementation "com.yubico:webauthn-server-core"'
+    official: true
+    description: Official Java WebAuthn relying-party (server) library.
+  - language: android
+    registry: maven
+    name: com.yubico.yubikit
+    url: https://github.com/Yubico/yubikit-android
+    install: 'implementation "com.yubico.yubikit:core"'
+    official: true
+    description: Official Yubico Mobile SDK for Android (YubiKit).
+  - language: swift
+    registry: github
+    name: YubiKit
+    url: https://github.com/Yubico/yubikit-ios
+    install: Swift Package Manager / CocoaPods (YubiKit)
+    official: true
+    description: Official Yubico Mobile SDK for iOS (YubiKit).
+  - language: c
+    registry: github
+    name: libfido2
+    url: https://github.com/Yubico/libfido2
+    install: See platform package managers (libfido2)
+    official: true
+    description: Official Yubico C library for FIDO2 / U2F over USB HID and NFC.

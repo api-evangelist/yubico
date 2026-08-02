@@ -1,0 +1,33 @@
+# Yubico
+
+> Yubico is the maker of the YubiKey hardware authentication device and the inventor of the Yubico OTP. Its public developer surface is the YubiCloud OTP validation REST API (api.yubico.com/wsapi/2.0/verify) plus first-party SDKs and libraries for WebAuthn/FIDO2, PIV, OATH, OTP, and YubiHSM across Python, .NET, Java, Android, iOS, and C, and the ykman CLI.
+
+## APIs
+- [YubiCloud OTP Validation API](https://developers.yubico.com/Software_Projects/YubiCloud_REST_API.html): Verify a Yubico OTP via a signed HTTPS GET to api.yubico.com/wsapi/2.0/verify.
+
+## Specs
+- [YubiCloud OpenAPI](https://raw.githubusercontent.com/api-evangelist/yubico/refs/heads/main/openapi/yubico-yubicloud-openapi.yml)
+
+## Developer resources
+- [Yubico Developers portal](https://developers.yubico.com/)
+- [Yubico OTP documentation](https://developers.yubico.com/OTP/)
+- [OTP validation protocol](https://developers.yubico.com/OTP/Specifications/OTP_validation_protocol.html)
+- [Software Projects (all libraries)](https://developers.yubico.com/Software_Projects/)
+- [ykman CLI](https://developers.yubico.com/yubikey-manager/)
+- [GitHub organization](https://github.com/Yubico)
+- [Get a free API key](https://upgrade.yubico.com/getapikey/)
+
+## SDKs
+- [yubikey-manager (Python/CLI)](https://pypi.org/project/yubikey-manager/)
+- [python-fido2](https://pypi.org/project/fido2/)
+- [Yubico .NET SDK](https://www.nuget.org/packages/Yubico.YubiKey)
+- [Java WebAuthn server](https://central.sonatype.com/artifact/com.yubico/webauthn-server-core)
+- [YubiKit Android](https://github.com/Yubico/yubikit-android)
+- [YubiKit iOS](https://github.com/Yubico/yubikit-ios)
+- [libfido2 (C)](https://github.com/Yubico/libfido2)
+
+## Operations & support
+- [Status page](https://status.yubico.com/)
+- [Support / knowledge base](https://support.yubico.com/)
+- [Security policy (security.txt)](https://yubico.com/.well-known/security.txt)
+- [Blog](https://www.yubico.com/blog/)

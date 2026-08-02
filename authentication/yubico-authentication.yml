@@ -1,0 +1,27 @@
+generated: '2026-07-21'
+method: searched
+source: https://developers.yubico.com/OTP/Specifications/OTP_validation_protocol.html
+summary:
+  types: [apiKey, hmac-signature]
+  api_key_in: [query]
+  oauth2_flows: []
+schemes:
+  - name: clientId
+    type: apiKey
+    in: query
+    parameter: id
+    description: >-
+      Numeric Client ID issued free by the Yubico API key generator
+      (https://upgrade.yubico.com/getapikey/).
+    sources: [openapi/yubico-yubicloud-openapi.yml]
+  - name: requestSignature
+    type: hmac
+    algorithm: HMAC-SHA1
+    in: query
+    parameter: h
+    description: >-
+      Base64 HMAC-SHA1 signature of the sorted request parameters, computed with
+      the shared secret issued alongside the Client ID. Clients must also verify
+      the signature on the response.
+    sources: [https://developers.yubico.com/OTP/Specifications/OTP_validation_protocol.html]
+docs: https://developers.yubico.com/OTP/Specifications/OTP_validation_protocol.html

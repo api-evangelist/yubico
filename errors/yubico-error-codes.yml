@@ -1,0 +1,39 @@
+generated: '2026-07-21'
+method: derived
+source: openapi/yubico-yubicloud-openapi.yml + https://developers.yubico.com/OTP/Specifications/OTP_validation_protocol.html
+format: yubico-status-field
+envelope_field: status
+note: >-
+  YubiCloud returns the outcome in the plain-text `status` field of the verify
+  response (HTTP is always 200). These are the documented status values.
+error_codes:
+  - code: OK
+    meaning: The OTP is valid.
+    action: Proceed; still verify the response signature and nonce.
+  - code: BAD_OTP
+    meaning: The OTP is invalid or malformed.
+    action: Reject the authentication attempt.
+  - code: REPLAYED_OTP
+    meaning: The OTP has already been seen by the service.
+    action: Reject; possible replay attack.
+  - code: BAD_SIGNATURE
+    meaning: The request HMAC signature was invalid.
+    action: Check the shared secret and signing routine.
+  - code: MISSING_PARAMETER
+    meaning: A required request parameter is missing.
+    action: Ensure id, otp, and nonce are all supplied.
+  - code: NO_SUCH_CLIENT
+    meaning: The Client ID does not exist.
+    action: Verify the id; request an API key if needed.
+  - code: OPERATION_NOT_ALLOWED
+    meaning: The client is not allowed to verify OTPs.
+    action: Check the client's account/permissions with Yubico.
+  - code: BACKEND_ERROR
+    meaning: Unexpected error in the validation server.
+    action: Retry; contact Yubico support if persistent.
+  - code: NOT_ENOUGH_ANSWERS
+    meaning: Not enough validation servers replied to satisfy the requested sync level.
+    action: Retry or lower the sl (sync level) parameter.
+  - code: REPLAYED_REQUEST
+    meaning: The request (same OTP + nonce) was seen before.
+    action: Use a fresh unique nonce per request.
