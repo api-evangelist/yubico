@@ -1,0 +1,81 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Yubico YubiCloud OTP Validation API",
+    "version": "2.0"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "id",
+      "value": "{{id}}",
+      "placement": "query"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Validation",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Verify a Yubico OTP",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.yubico.com/wsapi/2.0/verify",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "query",
+                "description": "Numeric Client ID obtained from the Yubico API key generator."
+              },
+              {
+                "name": "otp",
+                "value": "",
+                "type": "query",
+                "description": "The 44-character ModHex-encoded OTP emitted by the YubiKey."
+              },
+              {
+                "name": "nonce",
+                "value": "",
+                "type": "query",
+                "description": "Unique random string of 16 to 40 alphanumeric characters, used to protect against replay of the request/response pair."
+              },
+              {
+                "name": "h",
+                "value": "",
+                "type": "query",
+                "description": "Optional Base64-encoded HMAC-SHA1 signature of the request parameters using the client's shared secret. Recommended for production."
+              },
+              {
+                "name": "timestamp",
+                "value": "",
+                "type": "query",
+                "description": "Set to 1 to request the YubiKey internal timestamp and session counters in the response."
+              },
+              {
+                "name": "sl",
+                "value": "",
+                "type": "query",
+                "description": "Requested percentage of syncing servers that must agree before a response is returned. Integer 0-100 or the strings \"fast\" or \"secure\"."
+              },
+              {
+                "name": "timeout",
+                "value": "",
+                "type": "query",
+                "description": "Number of seconds to wait for sync responses before returning."
+              }
+            ]
+          },
+          "docs": "Validate a 44-character ModHex Yubico OTP against YubiCloud. The service returns a signed status indicating whether the OTP is valid, replayed, or malformed. Always verify the response signature (h) and confirm the returned nonce matches the nonce that was sent."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

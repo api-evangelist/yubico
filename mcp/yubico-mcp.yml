@@ -2,13 +2,18 @@ generated: '2026-07-21'
 method: derived
 status: candidate
 source: openapi/yubico-yubicloud-openapi.yml
-note: >-
-  No official hosted Yubico MCP server was found (searched registries and docs,
-  2026-07). Candidate tool list derived from the YubiCloud validation OpenAPI.
+note: No official hosted Yubico MCP server was found (searched registries and docs, 2026-07). Candidate
+  tool list derived from the YubiCloud validation OpenAPI.
 server:
   name: yubico-yubicloud
   transport: http
 tools:
-  - name: verify_otp
-    description: Verify a Yubico OTP against YubiCloud and return the signed validation status.
-    source_operation: openapi/yubico-yubicloud-openapi.yml#verifyOtp
+- name: verify_otp
+  description: Verify a Yubico OTP against YubiCloud and return the signed validation status.
+  source_operation: openapi/yubico-yubicloud-openapi.yml#verifyOtp
+deployment:
+  mode: none
+  verified: derived
+  tools: 1
+  checked: '2026-08-12'
+  source: catalog MCP census

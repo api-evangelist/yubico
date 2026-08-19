@@ -1,0 +1,195 @@
+{
+  "item": [
+    {
+      "id": "a31279af-f708-48f2-acf2-b62d17ffe6eb",
+      "name": "Validation",
+      "description": {
+        "content": "Yubico OTP validation operations.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "08075eeb-cdf0-44a8-9e95-de4d6fdae990",
+          "name": "Verify a Yubico OTP",
+          "request": {
+            "name": "Verify a Yubico OTP",
+            "description": {
+              "content": "Validate a 44-character ModHex Yubico OTP against YubiCloud. The service returns a signed status indicating whether the OTP is valid, replayed, or malformed. Always verify the response signature (h) and confirm the returned nonce matches the nonce that was sent.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "verify"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "id",
+                  "value": "<string>",
+                  "description": "(Required) Numeric Client ID obtained from the Yubico API key generator."
+                },
+                {
+                  "disabled": false,
+                  "key": "otp",
+                  "value": "<string>",
+                  "description": "(Required) The 44-character ModHex-encoded OTP emitted by the YubiKey."
+                },
+                {
+                  "disabled": false,
+                  "key": "nonce",
+                  "value": "<string>",
+                  "description": "(Required) Unique random string of 16 to 40 alphanumeric characters, used to protect against replay of the request/response pair."
+                },
+                {
+                  "disabled": false,
+                  "key": "h",
+                  "value": "<string>",
+                  "description": "Optional Base64-encoded HMAC-SHA1 signature of the request parameters using the client's shared secret. Recommended for production."
+                },
+                {
+                  "disabled": false,
+                  "key": "timestamp",
+                  "value": "<integer>",
+                  "description": "Set to 1 to request the YubiKey internal timestamp and session counters in the response."
+                },
+                {
+                  "disabled": false,
+                  "key": "sl",
+                  "value": "<string>",
+                  "description": "Requested percentage of syncing servers that must agree before a response is returned. Integer 0-100 or the strings \"fast\" or \"secure\"."
+                },
+                {
+                  "disabled": false,
+                  "key": "timeout",
+                  "value": "<integer>",
+                  "description": "Number of seconds to wait for sync responses before returning."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "text/plain"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "a30dc9d1-54cc-448a-87dd-1ef7b3445b37",
+              "name": "A signed plain-text response. The overall outcome is carried in the status field; the HTTP status is 200 even for invalid OTPs.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "verify"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "id",
+                      "value": "12345"
+                    },
+                    {
+                      "key": "otp",
+                      "value": "cccccccccccccccccccccccccccccccccccccccccccc"
+                    },
+                    {
+                      "key": "nonce",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "h",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "timestamp",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "sl",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "timeout",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "id",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "text/plain"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "h=hpWWH9kBIw99VSocLFQ8IVW6tKs=\nt=2026-07-22T00:56:42Z0511\notp=cccccccccccccccccccccccccccccccccccccccccccc\nnonce=abcdefghijklmnop\nstatus=BAD_OTP\n",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.yubico.com/wsapi/2.0",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "id"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}"
+      },
+      {
+        "key": "in",
+        "value": "query"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "4a1ddc6b-f1c8-44b8-866f-1fa0f1b12cd9",
+    "name": "Yubico YubiCloud OTP Validation API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "YubiCloud is Yubico's hosted web service for verifying Yubico One-Time Passwords (OTPs) generated by a YubiKey. A client submits an OTP to the verify endpoint and receives a signed plain-text response indicating whether the OTP is valid. Since 2020 all validation traffic is served from the single endpoint api.yubico.com. Requests and responses are authenticated with an HMAC-SHA1 signature computed over a shared secret obtained with the free API key (Client ID). Responses are newline-delimited key=value pairs, not JSON.\n\nContact Support:\n Name: Yubico Developer Program",
+      "type": "text/plain"
+    }
+  }
+}
