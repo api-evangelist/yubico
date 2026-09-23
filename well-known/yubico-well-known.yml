@@ -1,14 +1,22 @@
 generated: '2026-07-21'
 method: searched
 host: https://yubico.com
-documents:
+hosts_probed:
+- host: https://api.yubico.com
+  notes: /.well-known/security.txt, /openid-configuration, /oauth-authorization-server, /api-catalog all
+    returned 403 (WAF)
+- host: https://developers.yubico.com
+  notes: /.well-known/security.txt returned 300 (multiple choices)
+hosts:
+- host: https://yubico.com
+  documents:
   - path: /.well-known/security.txt
     status: 200
     file: yubico-security.txt
   - path: /.well-known/ai-plugin.json
     status: 404
-hosts_probed:
-  - host: https://api.yubico.com
-    notes: /.well-known/security.txt, /openid-configuration, /oauth-authorization-server, /api-catalog all returned 403 (WAF)
-  - host: https://developers.yubico.com
-    notes: /.well-known/security.txt returned 300 (multiple choices)
+x-shape-fix:
+  converted: '2026-08-20'
+  from: documents
+  note: Rewritten into hosts[] -> documents[], the only shape well_known_docs() in score.rb reads. A served
+    .well-known surface recorded in any other shape scores as absent.
