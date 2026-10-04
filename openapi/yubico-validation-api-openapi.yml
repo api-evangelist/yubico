@@ -105,20 +105,6 @@ paths:
                     '
 components:
   schemas:
-    ValidationStatus:
-      type: string
-      description: Outcome of the OTP validation.
-      enum:
-      - OK
-      - BAD_OTP
-      - REPLAYED_OTP
-      - BAD_SIGNATURE
-      - MISSING_PARAMETER
-      - NO_SUCH_CLIENT
-      - OPERATION_NOT_ALLOWED
-      - BACKEND_ERROR
-      - NOT_ENOUGH_ANSWERS
-      - REPLAYED_REQUEST
     ValidationResponse:
       type: object
       description: Newline-delimited key=value fields returned by YubiCloud.
@@ -155,6 +141,20 @@ components:
       - otp
       - nonce
       - status
+    ValidationStatus:
+      type: string
+      description: Outcome of the OTP validation.
+      enum:
+      - OK
+      - BAD_OTP
+      - REPLAYED_OTP
+      - BAD_SIGNATURE
+      - MISSING_PARAMETER
+      - NO_SUCH_CLIENT
+      - OPERATION_NOT_ALLOWED
+      - BACKEND_ERROR
+      - NOT_ENOUGH_ANSWERS
+      - REPLAYED_REQUEST
   securitySchemes:
     clientSignature:
       type: apiKey
