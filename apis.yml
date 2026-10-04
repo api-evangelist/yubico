@@ -77,6 +77,9 @@ maintainers:
 - FN: APIs.json
   email: info@apis.io
 common:
+- type: CapabilityMap
+  url: capabilities/yubico-capability-edges.yml
+  name: Yubico Business Capability Map
 - type: Overlay
   url: overlays/yubico-yubicloud-overlay.yaml
 - type: Website
