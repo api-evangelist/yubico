@@ -2,6 +2,7 @@ generated: '2026-10-13'
 method: searched
 checked:
 - https://mds3.fidoalliance.org/
+- ping-identity/integrations/ping-identity-integration-edges.yml
 marketplace_apps: []
 edges:
 - partner_name: FIDO Alliance certification
@@ -37,3 +38,23 @@ edges:
     detected: '2026-10-13'
   detected_by: sweep-identity.py
   detected: '2026-10-13'
+- partner_name: Ping Identity (own)
+  partner: ping-identity
+  partner_match: mirror
+  mirror_match: domain
+  type: marketplace
+  relationship: platform-app
+  direction: third-party
+  channel: partner-built
+  marketplace: own
+  evidence: https://marketplace.pingone.com/item/yubikey
+  mirror_of: ping-identity/integrations/ping-identity-integration-edges.yml
+  apps:
+  - 'YubiKey 5 Series: Phishing-Resistant MFA for the Ping Identity Ecosystem'
+  listing_count: 1
+  detected: '2026-10-14'
+  detected_by: mirror-platform-listings.py
+  badges:
+  - Ping Verified
+source:
+- ping-identity/integrations/ping-identity-integration-edges.yml

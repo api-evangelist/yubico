@@ -36,3 +36,15 @@
     detected: '2026-10-13'
   status: not-a-workflow
   arazzo: null
+- slug: yubico-ping-identity-own
+  label: Ping Identity (own)
+  partner: ping-identity
+  partner_name: Ping Identity (own)
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://marketplace.pingone.com/item/yubikey
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
