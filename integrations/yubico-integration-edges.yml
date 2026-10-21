@@ -21,6 +21,7 @@ checked:
 - https://www.indexventures.com/companies/
 - https://www.sequoiacap.com/our-companies/
 - https://www.sequoiacap.com/sitemap.xml
+- google-play/integrations/google-play-integration-edges.yml
 marketplace_apps: []
 edges:
 - partner_name: FIDO Alliance certification
@@ -56,24 +57,6 @@ edges:
     detected: '2026-10-13'
   detected_by: sweep-identity.py
   detected: '2026-10-13'
-- partner_name: Ping Identity (own)
-  partner: ping-identity
-  partner_match: mirror
-  mirror_match: domain
-  type: marketplace
-  relationship: platform-app
-  direction: third-party
-  channel: partner-built
-  marketplace: own
-  evidence: https://marketplace.pingone.com/item/yubikey
-  mirror_of: ping-identity/integrations/ping-identity-integration-edges.yml
-  apps:
-  - 'YubiKey 5 Series: Phishing-Resistant MFA for the Ping Identity Ecosystem'
-  listing_count: 1
-  detected: '2026-10-14'
-  detected_by: mirror-platform-listings.py
-  badges:
-  - Ping Verified
 - partner_name: Maven Central
   partner: maven-central
   partner_match: register
@@ -163,5 +146,40 @@ edges:
     sector: Enterprise
   detected_by: sweep-vc-portfolios.py
   first_seen: '2026-10-21'
+- partner_name: Ping Identity (own)
+  partner: ping-identity
+  partner_match: mirror
+  mirror_match: domain
+  type: marketplace
+  relationship: platform-app
+  direction: third-party
+  channel: partner-built
+  marketplace: own
+  evidence: https://marketplace.pingone.com/item/yubikey
+  mirror_of: ping-identity/integrations/ping-identity-integration-edges.yml
+  apps:
+  - 'YubiKey 5 Series: Phishing-Resistant MFA for the Ping Identity Ecosystem'
+  listing_count: 1
+  detected: '2026-10-14'
+  detected_by: mirror-platform-listings.py
+  badges:
+  - Ping Verified
+- partner_name: Google Play Developer (Google Play SDK Index)
+  partner: google-play
+  partner_match: mirror
+  mirror_match: domain
+  type: marketplace
+  relationship: platform-app
+  direction: third-party
+  channel: partner-built
+  marketplace: Google Play SDK Index
+  evidence: https://play.google.com/sdks/details/com-yubico-yubikit-piv
+  mirror_of: google-play/integrations/google-play-integration-edges.yml
+  apps:
+  - Yubico SDK
+  listing_count: 1
+  detected: '2026-10-21'
+  detected_by: mirror-platform-listings.py
+  category: mobile SDK (user-authentication)
 source:
 - ping-identity/integrations/ping-identity-integration-edges.yml

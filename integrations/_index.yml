@@ -36,18 +36,6 @@
     detected: '2026-10-13'
   status: not-a-workflow
   arazzo: null
-- slug: yubico-ping-identity-own
-  label: Ping Identity (own)
-  partner: ping-identity
-  partner_name: Ping Identity (own)
-  type: marketplace
-  marketplace: own
-  channel: partner-built
-  evidence: https://marketplace.pingone.com/item/yubikey
-  source: edge
-  relationship: platform-app
-  status: not-a-workflow
-  arazzo: null
 - slug: yubico-maven-central
   label: Maven Central
   partner: maven-central
@@ -138,5 +126,30 @@
     year: '2017'
     status: Active
     sector: Enterprise
+  status: not-a-workflow
+  arazzo: null
+- slug: yubico-ping-identity-own
+  label: Ping Identity (own)
+  partner: ping-identity
+  partner_name: Ping Identity (own)
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://marketplace.pingone.com/item/yubikey
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
+- slug: yubico-google-play-developer-google-play-sdk-index
+  label: Google Play Developer (Google Play SDK Index)
+  partner: google-play
+  partner_name: Google Play Developer (Google Play SDK Index)
+  category: mobile SDK (user-authentication)
+  type: marketplace
+  marketplace: Google Play SDK Index
+  channel: partner-built
+  evidence: https://play.google.com/sdks/details/com-yubico-yubikit-piv
+  source: edge
+  relationship: platform-app
   status: not-a-workflow
   arazzo: null
