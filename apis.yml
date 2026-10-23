@@ -77,6 +77,8 @@ maintainers:
 - FN: APIs.json
   email: info@apis.io
 common:
+- type: PostmanWorkspace
+  url: https://www.postman.com/kinlaneapi/yubico/overview
 - url: https://www.yubico.com/feed/
   type: BlogRSS
 - type: CapabilityMap
